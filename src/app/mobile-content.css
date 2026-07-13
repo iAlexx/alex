@@ -1,0 +1,156 @@
+/* Mobile content compression — progressive disclosure utilities (max-width 1023px) */
+
+@media (max-width: 1023px) {
+  .mobile-compress-hide {
+    display: none !important;
+  }
+
+  .journey-shell {
+    padding-block: clamp(3.25rem, 9vw, 5rem) !important;
+  }
+
+  .journey-composition {
+    gap: clamp(1rem, 3.5vw, 1.5rem);
+  }
+
+  .human-annotation {
+    margin-top: var(--mobile-small-gap) !important;
+  }
+
+  /* Hero — tighter rhythm, 4 social pills initially */
+  .hero-social-links__list > li:nth-child(n + 5) {
+    display: none;
+  }
+
+  .hero-social-links.is-expanded .hero-social-links__list > li:nth-child(n + 5) {
+    display: list-item;
+  }
+
+  .hero-social-links__more {
+    display: inline-flex;
+    margin-top: 0.5rem;
+    min-height: 2.5rem;
+    padding-inline: 0.85rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(255 255 255 / 0.12);
+    background: transparent;
+    color: rgb(235 241 255 / 0.82);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .hero-social-links__more:focus-visible {
+    outline: 2px solid rgb(255 255 255 / 0.35);
+    outline-offset: 2px;
+  }
+
+  .orbital-hero-composition,
+  .three-hero-composition {
+    gap: clamp(1rem, 3.5vw, 1.5rem);
+  }
+
+  /* World Core — less competition during dense copy / disclosures / preview */
+  html:has(.mobile-disclosure.is-open) .world-core-layer--mobile,
+  html.mobile-preview-expanded .world-core-layer--mobile {
+    opacity: 0.06 !important;
+    pointer-events: none;
+  }
+
+  .world-core-layer--mobile {
+    opacity: 0.16 !important;
+    inset-inline-end: 0.15rem !important;
+    bottom: clamp(2.5rem, 8svh, 4rem) !important;
+  }
+
+  html[data-world-state="brands"] .world-core-layer--mobile,
+  html[data-world-state="systems"] .world-core-layer--mobile,
+  html[data-world-state="security"] .world-core-layer--mobile {
+    opacity: 0.12 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-compress-only {
+    display: none !important;
+  }
+}
+
+/* Mobile process steps */
+.mobile-process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mobile-content-gap, 0.875rem);
+  list-style: none;
+  padding: 0;
+  margin: var(--mobile-content-gap, 0.875rem) 0 0;
+}
+
+.mobile-process-steps__item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.mobile-process-steps__number {
+  flex: 0 0 auto;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgb(var(--world-accent-rgb) / 0.85);
+  padding-top: 0.15rem;
+}
+
+.mobile-process-steps__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(235 241 255 / 0.92);
+  line-height: 1.35;
+}
+
+.mobile-process-steps__desc {
+  margin-top: 0.2rem;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgb(200 210 230 / 0.82);
+}
+
+/* Intelligence mobile core layers */
+.mobile-intel-layers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mobile-small-gap, 0.625rem);
+  margin-top: var(--mobile-content-gap, 0.875rem);
+}
+
+.mobile-intel-layers__item {
+  padding: 0.65rem 0.75rem;
+  border-inline-start: 2px solid rgb(var(--world-accent-rgb) / 0.45);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgb(235 241 255 / 0.9);
+  line-height: 1.45;
+}
+
+.mobile-intel-layers__item span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgb(200 210 230 / 0.78);
+}
+
+/* Future — compact item list on mobile */
+.mobile-future-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mobile-small-gap, 0.625rem);
+  margin-top: var(--mobile-content-gap, 0.875rem);
+}
+
+.mobile-future-items__item {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(235 241 255 / 0.9);
+  line-height: 1.4;
+}

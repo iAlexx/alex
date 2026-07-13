@@ -1,0 +1,30 @@
+{
+  "viewport": { "w": 390, "h": 844 },
+  "baselineNote": "Before heights from mobile-ux-refinement audit-after full-page captures (pre content-compression).",
+  "before": {
+    "en": { "documentHeight": 16365, "source": "audit-after fullpage PNG height" },
+    "ar": { "documentHeight": 15601, "source": "audit-after fullpage PNG height" }
+  },
+  "after": {
+    "en": {
+      "documentHeight": 10175,
+      "visiblePills": 20,
+      "paragraphsInDom": 223,
+      "disclosures": 7,
+      "processItems": 14
+    },
+    "ar": {
+      "documentHeight": 9693,
+      "visiblePills": 20,
+      "paragraphsInDom": 223,
+      "disclosures": 7,
+      "processItems": 14
+    }
+  },
+  "reductionPercent": {
+    "en": 37.8,
+    "ar": 37.9
+  },
+  "initialTechPillsPerSection": 4,
+  "homepageTechStackExpandLabel": "Show all technologies / عرض جميع التقنيات"
+}

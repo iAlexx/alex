@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alex Portfolio
+
+A premium, bilingual (English / Arabic), cinematic portfolio for **Alex** — Product Builder, Full-Stack Developer, AI Systems & Automation, Cybersecurity.
+
+The full product specification lives in [`ALEX_PORTFOLIO_ROADMAP.md`](./ALEX_PORTFOLIO_ROADMAP.md). All build phases follow that roadmap.
+
+## Current Status
+
+- Phase 0 — Repository & Environment: complete
+- Phase 1 — Content Foundation: complete
+- Phase 4 — Project Case Study Pages: complete
+- Phase 4.1 — Live website previews (Gymura, Restaurant Platform) and RTL/layout fixes: complete
+- Phases 5+ (full Arabic QA, Gymura cinematic GSAP, global 3D): not started
+
+## Stack
+
+- Next.js (App Router) + React + strict TypeScript
+- Tailwind CSS
+- GSAP / ScrollTrigger and React Three Fiber will be added in later phases only
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/en](http://localhost:3000/en).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+See [`docs/live-website-preview.md`](./docs/live-website-preview.md) for iframe embedding limitations and required CSP changes on **gymura.store** and **alnkha.site**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Script                 | Purpose                     |
+| ---------------------- | --------------------------- |
+| `npm run dev`          | Development server          |
+| `npm run build`        | Production build            |
+| `npm run lint`         | ESLint                      |
+| `npm run type-check`   | TypeScript (`tsc --noEmit`) |
+| `npm run format`       | Prettier write              |
+| `npm run format:check` | Prettier check              |
 
-To learn more about Next.js, take a look at the following resources:
+## Architecture Principles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- All personal and project content lives in typed configuration under `src/content/`. Layout code never hardcodes profile values.
+- Single source of truth for profile data: `src/content/profile/profile.ts` (professional email is `null` until one exists — UI must hide email actions).
+- Project data follows the `PortfolioProject` model in `src/content/projects/types.ts`. No date fields, no fake metrics, honest statuses only.
+- Bilingual by design: `/en` and `/ar` routes, LTR/RTL aware. Arabic content is completed in Phase 5.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Branch Strategy
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `main` — stable, always builds
+- `phase/<n>-<name>` — one branch per roadmap phase, merged into `main` after lint, type-check, and production build pass

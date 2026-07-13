@@ -1,0 +1,42 @@
+[
+  {
+    "file": "ar-desktop.report.json",
+    "performance": 86,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcp": "0.9 s",
+    "cls": "0",
+    "tbt": "310 ms"
+  },
+  {
+    "file": "ar-mobile.report.json",
+    "performance": 61,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcp": "4.5 s",
+    "cls": "0",
+    "tbt": "1,100 ms"
+  },
+  {
+    "file": "en-desktop.report.json",
+    "performance": 88,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcp": "0.8 s",
+    "cls": "0",
+    "tbt": "280 ms"
+  },
+  {
+    "file": "en-mobile.report.json",
+    "performance": 71,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcp": "4.1 s",
+    "cls": "0",
+    "tbt": "600 ms"
+  }
+]

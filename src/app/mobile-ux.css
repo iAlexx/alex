@@ -1,0 +1,294 @@
+/* Mobile UX refinement — max-width: 1023px / 767px only; desktop unchanged */
+
+@media (max-width: 1023px) {
+  .journey-shell {
+    padding-block: var(--mobile-section-block) !important;
+    padding-inline-end: var(--mobile-page-inline);
+  }
+
+  .journey-shell > .journey-content {
+    padding-inline-start: 0;
+    max-width: var(--mobile-reading-width);
+  }
+
+  /* Chapter marker — localized eyebrow before content */
+  .journey-shell[data-chapter-label]:not([data-chapter-label=""])::before {
+    content: attr(data-chapter-label);
+    display: block;
+    margin-bottom: var(--mobile-content-gap);
+    padding-inline-start: 0.85rem;
+    border-inline-start: 2px solid var(--mobile-chapter-accent);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(var(--world-accent-rgb) / 0.9);
+    line-height: 1.4;
+  }
+
+  html[dir="rtl"] .journey-shell[data-chapter-label]:not([data-chapter-label=""])::before {
+    letter-spacing: 0.04em;
+    text-transform: none;
+    line-height: 1.65;
+  }
+
+  .journey-shell[data-spine-section="core"]::before,
+  .journey-shell#hero::before,
+  .journey-shell[data-spine-section="manifesto"]::before {
+    content: none;
+    display: none;
+  }
+
+  /* Hide in-content eyebrow when chapter marker carries it */
+  .journey-shell[data-chapter-label]:not([data-chapter-label=""]) .journey-chapter-eyebrow {
+    display: none;
+  }
+
+  .journey-composition {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mobile-section-gap);
+  }
+
+  .journey-content .max-w-xl,
+  .journey-content .max-w-2xl,
+  .journey-content .max-w-3xl,
+  .journey-content p:not(.text-xs):not(.text-\[10px\]) {
+    line-height: 1.72;
+  }
+
+  html[dir="rtl"] .journey-content p:not(.text-xs):not(.text-\[10px\]) {
+    line-height: 1.82;
+  }
+
+  .world-chapter-header {
+    margin-bottom: var(--mobile-small-gap);
+  }
+
+  .world-chapter-header h2 {
+    font-size: clamp(1.625rem, 5.5vw, 2rem);
+    line-height: 1.25;
+  }
+
+  html[dir="rtl"] .world-chapter-header h2 {
+    line-height: 1.35;
+  }
+
+  /* Gymura — mobile content order (tablet/mobile only) */
+  .gymura-mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mobile-section-gap);
+  }
+
+  .gymura-mobile-stack .gymura-content-column {
+    display: contents;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-eyebrow {
+    order: 1;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-title {
+    order: 2;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-subtitle {
+    order: 3;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-bridge {
+    order: 4;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-statement {
+    order: 5;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-meta {
+    order: 6;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-tech {
+    order: 7;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-cta {
+    order: 8;
+  }
+
+  .gymura-mobile-stack .gymura-mobile-rail {
+    order: 9;
+    margin-top: var(--mobile-small-gap);
+  }
+
+  .gymura-mobile-stack .gymura-preview-column {
+    order: 10;
+    margin-top: var(--mobile-small-gap);
+  }
+
+  .editorial-wordmark {
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
+    line-height: 0.95;
+  }
+
+  html[dir="rtl"] .editorial-wordmark {
+    line-height: 1.05;
+  }
+
+  /* Restaurant / systems */
+  .systems-world-composition__platform {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mobile-section-gap);
+  }
+
+  /* Security learning path spacing */
+  .journey-rail--discipline-vertical .journey-rail__track {
+    gap: var(--mobile-content-gap);
+  }
+
+  .security-framework {
+    margin-top: var(--mobile-section-gap);
+    padding-top: var(--mobile-section-gap);
+    border-top: 1px solid rgb(var(--world-accent-rgb) / 0.12);
+  }
+
+  .security-legal-note {
+    margin-top: var(--mobile-content-gap);
+    padding: var(--mobile-content-gap);
+    border-inline-start: 3px solid rgb(var(--world-accent-rgb) / 0.45) !important;
+    background: rgb(var(--world-accent-rgb) / 0.04);
+    border-radius: 0 0.5rem 0.5rem 0;
+    color: rgb(235 241 255 / 0.88) !important;
+  }
+
+  html[dir="rtl"] .security-legal-note {
+    border-radius: 0.5rem 0 0 0.5rem;
+    border-inline-start: none !important;
+    border-inline-end: 3px solid rgb(var(--world-accent-rgb) / 0.45) !important;
+  }
+
+  /* Intelligence — calmer mobile actions */
+  .intel-architecture__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--mobile-small-gap);
+  }
+
+  .intel-architecture__diagram {
+    gap: var(--mobile-content-gap);
+  }
+
+  .intel-architecture__branches {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mobile-content-gap);
+  }
+
+  /* Texas micro-flow */
+  .texas-micro-flow__nodes {
+    white-space: normal;
+  }
+
+  /* Preview sections — safe zone for World Core */
+  #world-brands .journey-content,
+  #world-systems .journey-content,
+  #world-security .journey-content {
+    padding-bottom: clamp(4.5rem, 16vw, 6.5rem);
+  }
+
+  /* CTA spacing */
+  .mobile-primary-cta {
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--mobile-content-gap);
+  }
+
+  @media (min-width: 400px) {
+    .mobile-primary-cta {
+      width: auto;
+      min-width: min(100%, 16rem);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .gymura-mobile-stack .gymura-content-column {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
+  .journey-shell {
+    padding-inline-start: calc(var(--spine-inset) + 0.5rem);
+  }
+
+  /* Hero mobile rhythm */
+  .orbital-hero-composition__visual,
+  .three-hero-composition__visual {
+    min-height: clamp(42svh, 48svh, 52svh);
+  }
+
+  .orbital-hero-composition,
+  .three-hero-composition {
+    min-height: auto;
+    gap: var(--mobile-section-gap);
+  }
+
+  .orbital-hero-copy__ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--mobile-small-gap);
+  }
+
+  .orbital-hero-copy__ctas a {
+    justify-content: center;
+    min-height: 2.75rem;
+  }
+
+  /* World Core — content-safe mobile */
+  .world-core-layer--mobile {
+    width: clamp(140px, 38vw, 200px);
+    height: clamp(140px, 38vw, 200px);
+    opacity: 0.24;
+    bottom: clamp(3.5rem, 11svh, 5rem);
+    inset-inline-end: clamp(0.35rem, 2vw, 0.75rem);
+    z-index: 0;
+  }
+
+  html[data-world-state="brands"] .world-core-layer--mobile,
+  html[data-world-state="systems"] .world-core-layer--mobile,
+  html[data-world-state="security"] .world-core-layer--mobile {
+    opacity: 0.18;
+  }
+
+  html[data-world-state="intelligence"] .world-core-layer--mobile {
+    opacity: 0.2;
+  }
+
+  .world-core-layer--mobile .world-core-layer__tint {
+    opacity: 0.65;
+  }
+
+  /* Manifesto band */
+  .manifesto-portrait-band {
+    min-height: min(48vh, 26rem) !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .journey-shell {
+    padding-inline-start: calc(var(--spine-inset) + 0.35rem);
+  }
+
+  .tech-badge__label {
+    max-width: 9.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

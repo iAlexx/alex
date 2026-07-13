@@ -1,0 +1,707 @@
+/* Shared orbital portrait hero — production homepage + three-hero-lab */
+
+.orbital-hero-shell {
+  position: relative;
+  z-index: 1;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.orbital-hero-shell__atmosphere {
+  background: radial-gradient(
+    ellipse 58% 50% at 84% 20%,
+    color-mix(in srgb, var(--color-electric) 5%, transparent),
+    transparent 68%
+  );
+}
+
+.orbital-hero-shell__atmosphere--ar {
+  background: radial-gradient(
+    ellipse 58% 50% at 16% 20%,
+    color-mix(in srgb, var(--color-electric) 5%, transparent),
+    transparent 68%
+  );
+}
+
+/* Composition — 40/60 desktop with shifted visual stack */
+.orbital-hero-composition,
+.three-hero-composition {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: center;
+  min-height: clamp(32rem, 72vh, 40rem);
+}
+
+@media (min-width: 1024px) {
+  .orbital-hero-composition,
+  .three-hero-composition {
+    --lovable-desktop-shift: clamp(5rem, 6.5vw, 7.5rem);
+    grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+    gap: clamp(2.5rem, 4.5vw, 4rem);
+    align-items: center;
+  }
+
+  /* Arabic desktop — physical LTR grid tracks; visual column first, copy on the right */
+  .orbital-hero-composition--ar,
+  .three-hero-composition--ar {
+    direction: ltr;
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 0.4fr);
+  }
+
+  .orbital-hero-composition--ar .orbital-hero-composition__visual,
+  .three-hero-composition--ar .three-hero-composition__visual {
+    grid-column: 1;
+    justify-self: start;
+    justify-content: flex-start;
+    margin-inline: 0;
+    overflow-x: clip;
+    z-index: 1;
+  }
+
+  .orbital-hero-composition--ar .orbital-hero-composition__copy,
+  .three-hero-composition--ar .three-hero-composition__copy {
+    grid-column: 2;
+    direction: rtl;
+    text-align: right;
+    justify-self: stretch;
+    isolation: isolate;
+    z-index: 3;
+  }
+}
+
+.orbital-hero-composition__copy,
+.three-hero-composition__copy {
+  position: relative;
+  z-index: 2;
+}
+
+.orbital-hero-composition__visual,
+.three-hero-composition__visual {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  min-height: min(65svh, 70svh);
+}
+
+@media (min-width: 1024px) {
+  .orbital-hero-composition__visual,
+  .three-hero-composition__visual {
+    justify-self: end;
+    justify-content: flex-end;
+    min-height: min(78vh, 82vh);
+    margin-inline: 0;
+  }
+
+  .orbital-hero-composition--ar .orbital-hero-composition__visual,
+  .three-hero-composition--ar .three-hero-composition__visual {
+    justify-self: start;
+    justify-content: flex-start;
+    margin-inline: 0;
+  }
+
+  .orbital-hero-composition--ar .lovable-hero-visual__tint-fixed,
+  .three-hero-composition--ar .lovable-hero-visual__tint-fixed {
+    inset: -14% -32% -14% -10%;
+    background: radial-gradient(
+      ellipse 65% 55% at 22% 50%,
+      rgb(79 141 255 / 0.08),
+      rgb(79 141 255 / 0.03) 40%,
+      transparent 72%
+    );
+  }
+
+  .lovable-hero-visual-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    transform: translateX(var(--lovable-desktop-shift));
+  }
+
+  .orbital-hero-composition--ar .lovable-hero-visual-stack,
+  .three-hero-composition--ar .lovable-hero-visual-stack {
+    transform: translateX(calc(-1 * var(--lovable-desktop-shift)));
+  }
+
+  .orbital-hero-composition .lovable-hero-visual__rings-fixed,
+  .three-hero-composition .lovable-hero-visual__rings-fixed {
+    transform: translateX(var(--lovable-desktop-shift));
+  }
+
+  .orbital-hero-composition--ar .lovable-hero-visual__rings-fixed,
+  .three-hero-composition--ar .lovable-hero-visual__rings-fixed {
+    right: auto;
+    left: 0;
+    width: min(52%, 42rem);
+    transform: translateX(calc(-1 * var(--lovable-desktop-shift)));
+    -webkit-mask-image: radial-gradient(
+      ellipse 82% 78% at 32% 48%,
+      #000 22%,
+      rgb(0 0 0 / 0.5) 46%,
+      transparent 70%
+    );
+    mask-image: radial-gradient(
+      ellipse 82% 78% at 32% 48%,
+      #000 22%,
+      rgb(0 0 0 / 0.5) 46%,
+      transparent 70%
+    );
+  }
+
+  .orbital-hero-composition--ar .lovable-hero-visual,
+  .three-hero-composition--ar .lovable-hero-visual {
+    margin-inline-end: auto;
+    margin-inline-start: 0;
+  }
+
+  .lovable-hero-visual__center {
+    justify-content: flex-end;
+  }
+
+  .orbital-hero-composition--ar .lovable-hero-visual__center,
+  .three-hero-composition--ar .lovable-hero-visual__center {
+    justify-content: flex-start;
+  }
+}
+
+.orbital-hero-copy__title,
+.three-hero-copy__title {
+  margin-top: 0.75rem;
+  font-size: clamp(2rem, 4.8vw, 3.25rem);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-soft);
+  text-wrap: balance;
+}
+
+.orbital-hero-copy__title-line,
+.three-hero-copy__title-line {
+  display: block;
+}
+
+.orbital-hero-copy--ar .orbital-hero-copy__title,
+.three-hero-copy--ar .three-hero-copy__title {
+  line-height: 1.35;
+}
+
+@media (min-width: 1024px) {
+  .orbital-hero-copy--ar,
+  .three-hero-copy--ar {
+    text-align: right;
+  }
+
+  .orbital-hero-copy--ar .max-w-xl,
+  .three-hero-copy--ar .max-w-xl {
+    margin-inline-start: auto;
+  }
+
+  .orbital-hero-copy--ar .orbital-hero-copy__cta,
+  .three-hero-copy--ar .three-hero-copy__cta {
+    justify-content: flex-start;
+  }
+
+  .orbital-hero-copy--ar .hero-social-links__list,
+  .three-hero-copy--ar .hero-social-links__list {
+    justify-content: flex-end;
+  }
+
+  .orbital-hero-copy--ar .hero-origin-rail,
+  .three-hero-copy--ar .hero-origin-rail {
+    padding-inline-start: 0;
+    padding-inline-end: 1.25rem;
+  }
+}
+
+/* Arabic Hero CTA — balanced pills, primary right / secondary left in RTL flow */
+.orbital-hero-copy--ar .orbital-hero-copy__cta,
+.three-hero-copy--ar .three-hero-copy__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.orbital-hero-copy--ar .orbital-hero-copy__cta > a,
+.three-hero-copy--ar .three-hero-copy__cta > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  height: 3rem;
+  padding-inline: 1.125rem;
+  border-radius: 9999px;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .orbital-hero-copy--ar .orbital-hero-copy__cta,
+  .three-hero-copy--ar .three-hero-copy__cta {
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: clamp(0.75rem, 1vw, 1rem);
+    justify-content: flex-start;
+  }
+
+  .orbital-hero-copy--ar .orbital-hero-copy__cta > a,
+  .three-hero-copy--ar .three-hero-copy__cta > a {
+    flex: 0 0 auto;
+    min-width: 10.75rem;
+    max-width: 11.25rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 639px) {
+  .orbital-hero-copy--ar .orbital-hero-copy__cta > a,
+  .three-hero-copy--ar .three-hero-copy__cta > a {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .orbital-hero-copy__title,
+  .three-hero-copy__title {
+    max-width: 11.5em;
+  }
+
+  .orbital-hero-copy--ar .orbital-hero-copy__title,
+  .three-hero-copy--ar .three-hero-copy__title {
+    max-width: 14em;
+  }
+}
+
+.lovable-hero-visual__rings-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+  overflow: visible;
+  -webkit-mask-image: radial-gradient(
+    ellipse 88% 82% at 72% 48%,
+    #000 28%,
+    rgb(0 0 0 / 0.55) 52%,
+    transparent 76%
+  );
+  mask-image: radial-gradient(
+    ellipse 88% 82% at 72% 48%,
+    #000 28%,
+    rgb(0 0 0 / 0.55) 52%,
+    transparent 76%
+  );
+}
+
+html[dir="rtl"] .lovable-hero-visual__rings-fixed {
+  right: auto;
+  left: 0;
+  -webkit-mask-image: radial-gradient(
+    ellipse 88% 82% at 28% 48%,
+    #000 28%,
+    rgb(0 0 0 / 0.55) 52%,
+    transparent 76%
+  );
+  mask-image: radial-gradient(
+    ellipse 88% 82% at 28% 48%,
+    #000 28%,
+    rgb(0 0 0 / 0.55) 52%,
+    transparent 76%
+  );
+}
+
+@media (min-width: 1024px) {
+  .lovable-hero-visual__rings-fixed {
+    width: 55%;
+  }
+}
+
+.lovable-hero-visual__rings-static {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lovable-hero-visual__tint-fixed {
+  position: absolute;
+  inset: -14% -10% -14% -32%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 65% 55% at 78% 50%,
+    rgb(79 141 255 / 0.08),
+    rgb(79 141 255 / 0.03) 40%,
+    transparent 72%
+  );
+  transition: opacity 0.7s ease;
+}
+
+/* Persistent World Core owns hero atmosphere — avoid double tint panel */
+html[data-world-core-persistent] .lovable-hero-visual__tint-fixed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.lovable-hero-visual {
+  position: relative;
+  width: 100%;
+  height: min(65svh, 70svh);
+  min-height: inherit;
+  overflow: visible;
+  isolation: isolate;
+  background: transparent;
+}
+
+@media (min-width: 1024px) {
+  .lovable-hero-visual {
+    height: min(78vh, 82vh);
+    max-width: 580px;
+  }
+}
+
+.lovable-hero-visual__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lovable-hero-visual__center {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
+.lovable-hero-visual-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+}
+
+.lovable-hero-visual__portrait-wrap {
+  position: relative;
+  height: 100%;
+  width: auto;
+  max-width: min(580px, 100%);
+  aspect-ratio: 764 / 1024;
+  background: transparent;
+}
+
+.lovable-hero-visual__paths-front {
+  position: absolute;
+  inset: -4%;
+  z-index: 4;
+  width: calc(100% + 8%);
+  height: calc(100% + 8%);
+  margin: -4%;
+  pointer-events: none;
+  opacity: 0.42;
+  mix-blend-mode: screen;
+}
+
+.lovable-portrait {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.lovable-portrait__ambient {
+  position: absolute;
+  inset: -2.5rem;
+  z-index: -1;
+  border-radius: 9999px;
+  filter: blur(48px);
+  opacity: 0.7;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 60% at 30% 40%, rgba(47, 128, 255, 0.35), transparent 70%),
+    radial-gradient(50% 50% at 75% 60%, rgba(131, 91, 255, 0.28), transparent 70%);
+}
+
+.lovable-portrait__plate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  background: transparent;
+}
+
+.lovable-portrait__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 48% 46%;
+  user-select: none;
+  background: transparent;
+  -webkit-mask-image: radial-gradient(ellipse 78% 92% at 55% 45%, #000 55%, transparent 92%);
+  mask-image: radial-gradient(ellipse 78% 92% at 55% 45%, #000 55%, transparent 92%);
+  filter: contrast(1.08) saturate(1.05);
+}
+
+.lovable-portrait--ar .lovable-portrait__image {
+  object-position: 52% 46%;
+}
+
+.lovable-portrait__rim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.lovable-portrait__rim--blue {
+  opacity: 0.7;
+  background: radial-gradient(
+    ellipse 40% 60% at 12% 40%,
+    rgba(47, 128, 255, 0.55),
+    transparent 60%
+  );
+}
+
+.lovable-portrait__rim--violet {
+  opacity: 0.6;
+  background: radial-gradient(
+    ellipse 35% 55% at 88% 55%,
+    rgba(131, 91, 255, 0.45),
+    transparent 62%
+  );
+}
+
+.lovable-portrait__shadow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 58%, rgb(6 8 15 / 0.35) 88%, transparent 100%);
+}
+
+.lovable-portrait__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.lovable-portrait__paths-front {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.lovable-portrait__corner {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  pointer-events: none;
+  border-color: rgba(47, 128, 255, 0.5);
+}
+
+.lovable-portrait__corner--tl {
+  top: 0.75rem;
+  left: 0.75rem;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.lovable-portrait__corner--br {
+  right: 0.75rem;
+  bottom: 0.75rem;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+@media (max-width: 1023px) {
+  .orbital-hero-composition,
+  .three-hero-composition {
+    grid-template-columns: 1fr;
+  }
+
+  .orbital-hero-composition__copy,
+  .three-hero-composition__copy {
+    order: 1;
+  }
+
+  .orbital-hero-composition__visual,
+  .three-hero-composition__visual {
+    order: 2;
+    justify-self: auto;
+    justify-content: center;
+    margin-inline: 0;
+    min-height: clamp(58svh, 65svh, 70svh);
+    padding-inline: clamp(0.5rem, 3vw, 1rem);
+    overflow-x: clip;
+  }
+
+  .orbital-hero-composition--ar .orbital-hero-composition__copy,
+  .three-hero-composition--ar .three-hero-composition__copy {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .orbital-hero-composition--ar .orbital-hero-copy--ar .hero-social-links__list,
+  .three-hero-composition--ar .three-hero-copy--ar .hero-social-links__list {
+    justify-content: flex-end;
+  }
+
+  .lovable-hero-visual-stack,
+  .lovable-hero-visual__rings-fixed {
+    transform: none;
+  }
+
+  .lovable-hero-visual {
+    height: clamp(58svh, 65svh, 70svh);
+    max-width: 100%;
+  }
+
+  .lovable-hero-visual__center {
+    justify-content: center;
+  }
+
+  .lovable-hero-visual__portrait-wrap {
+    width: min(100%, 420px);
+    height: 100%;
+  }
+
+  .lovable-portrait__image {
+    object-position: 50% 48%;
+  }
+
+  .lovable-portrait--ar .lovable-portrait__image {
+    object-position: 52% 48%;
+  }
+
+  .lovable-hero-visual__paths-front {
+    opacity: 0.38;
+  }
+}
+
+@media (max-width: 374px) {
+  .orbital-hero-copy__title,
+  .three-hero-copy__title {
+    font-size: clamp(1.65rem, 8.5vw, 2rem);
+  }
+
+  .orbital-hero-copy__cta,
+  .three-hero-copy__cta {
+    margin-top: 1.5rem;
+  }
+
+  .lovable-hero-visual {
+    height: min(62svh, 68svh);
+  }
+}
+
+/* Hero social links — glass pills directly below CTA buttons */
+.hero-social-links {
+  margin-top: clamp(1.125rem, 2vw, 1.5rem);
+}
+
+.hero-social-links__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(8, 12, 24, 0.28);
+  border: 1px solid rgba(120, 160, 255, 0.18);
+  color: rgba(235, 241, 255, 0.92);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(4, 8, 20, 0.22);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero-social-pill__icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+  opacity: 0.88;
+}
+
+.hero-social-pill:hover,
+.hero-social-pill:focus-visible {
+  border-color: rgba(140, 180, 255, 0.42);
+  color: rgba(245, 248, 255, 0.98);
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 16px rgba(60, 120, 255, 0.14),
+    0 2px 8px rgba(4, 8, 20, 0.28);
+}
+
+.hero-social-pill:hover .hero-social-pill__icon,
+.hero-social-pill:focus-visible .hero-social-pill__icon {
+  opacity: 1;
+}
+
+.hero-social-pill:focus-visible {
+  outline: 2px solid rgba(120, 180, 255, 0.55);
+  outline-offset: 2px;
+}
+
+@media (max-width: 639px) {
+  .hero-social-pill {
+    min-height: 2.125rem;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-social-pill__icon {
+    width: 0.8125rem;
+    height: 0.8125rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-social-pill {
+    transition: none;
+  }
+
+  .hero-social-pill:hover,
+  .hero-social-pill:focus-visible {
+    transform: none;
+  }
+
+  .lovable-portrait__plate {
+    transform: none !important;
+    transition: none;
+  }
+}

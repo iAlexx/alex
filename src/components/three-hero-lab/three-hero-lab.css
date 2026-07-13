@@ -1,0 +1,80 @@
+/* Three Hero Lab — evaluation route shell only (visual styles in orbital-hero.css) */
+
+.three-hero-lab-page {
+  --thl-page-bg: #05070b;
+  position: relative;
+  z-index: 1;
+  max-width: 96rem;
+  margin-inline: auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  padding-bottom: 4rem;
+  overflow-x: clip;
+  background: var(--thl-page-bg);
+}
+
+.three-hero-lab-header__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.three-hero-lab-badge {
+  display: inline-flex;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-electric);
+  border: 1px solid color-mix(in srgb, var(--color-electric) 45%, transparent);
+  background: color-mix(in srgb, var(--color-electric) 8%, transparent);
+}
+
+.three-hero-lab-header__back {
+  font-size: 0.875rem;
+  color: var(--color-mist);
+}
+
+.three-hero-lab-header__back:hover {
+  color: var(--color-electric);
+}
+
+.three-hero-lab-header__eyebrow {
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+}
+
+.three-hero-lab-header__desc {
+  margin-top: 0.5rem;
+  max-width: 42rem;
+  color: var(--color-mist);
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+.three-hero-core {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-mist) 88%, var(--color-electric));
+}
+
+.three-hero-core__node {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 2px;
+  background: var(--color-ink);
+  border: 1px solid color-mix(in srgb, var(--color-electric) 55%, transparent);
+}

@@ -1,0 +1,226 @@
+/* Persistent homepage World Core — fixed inline-end layer, no rectangular panel */
+
+/* Content-heavy worlds — keep nucleus further inline-end, lower presence */
+html[data-world-state="method"] .world-core-layer,
+html[data-world-state="brands"] .world-core-layer,
+html[data-world-state="systems"] .world-core-layer,
+html[data-world-state="intelligence"] .world-core-layer,
+html[data-world-state="security"] .world-core-layer {
+  transform: translateX(clamp(0.75rem, 2vw, 1.5rem));
+  opacity: 0.82;
+}
+
+html[dir="rtl"][data-world-state="method"] .world-core-layer,
+html[dir="rtl"][data-world-state="brands"] .world-core-layer,
+html[dir="rtl"][data-world-state="systems"] .world-core-layer,
+html[dir="rtl"][data-world-state="intelligence"] .world-core-layer,
+html[dir="rtl"][data-world-state="security"] .world-core-layer {
+  transform: translateX(calc(-1 * clamp(0.75rem, 2vw, 1.5rem)));
+}
+
+.world-core-layer {
+  position: fixed;
+  top: 0;
+  inset-inline-end: 0;
+  width: clamp(280px, 48vw, 52%);
+  height: 100svh;
+  max-height: 100dvh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+  background: transparent;
+  opacity: 1;
+  transition:
+    opacity var(--world-transition-duration, 800ms) ease,
+    transform var(--world-transition-duration, 800ms) ease;
+  -webkit-mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    rgb(0 0 0 / 0.35) 14%,
+    #000 28%,
+    #000 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    rgb(0 0 0 / 0.35) 14%,
+    #000 28%,
+    #000 90%,
+    transparent 100%
+  );
+}
+
+/* RTL — anchor fade toward copy so core stays on the visual side */
+html[dir="rtl"] .world-core-layer {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(0 0 0 / 0.35) 14%,
+    #000 28%,
+    #000 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(0 0 0 / 0.35) 14%,
+    #000 28%,
+    #000 90%,
+    transparent 100%
+  );
+}
+
+/* Hero / core — keep nucleus on the visual (inline-start) side in Arabic desktop */
+@media (min-width: 1024px) {
+  html[dir="rtl"][data-world-state="core"] .world-core-layer {
+    transform: translateX(calc(-1 * clamp(1rem, 3vw, 2rem)));
+  }
+}
+
+html[dir="rtl"] .world-core-layer__tint {
+  inset: -12% -28% -12% -8%;
+  background: radial-gradient(
+    ellipse 65% 55% at 22% 50%,
+    rgb(var(--world-accent-rgb) / 0.1),
+    rgb(var(--world-accent-rgb) / 0.04) 38%,
+    transparent 72%
+  );
+}
+
+.world-core-layer__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: opacity var(--world-transition-duration, 750ms) ease;
+}
+
+.world-core-layer__tint {
+  position: absolute;
+  inset: -12% -8% -12% -28%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 65% 55% at 78% 50%,
+    rgb(var(--world-accent-rgb) / 0.1),
+    rgb(var(--world-accent-rgb) / 0.04) 38%,
+    transparent 72%
+  );
+  opacity: var(--world-tint-opacity, 1);
+  transition: opacity var(--world-transition-duration, 750ms) ease;
+}
+
+.world-core-fallback {
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+  background: transparent;
+  transition: opacity var(--world-transition-duration, 750ms) ease;
+}
+
+/* Tablet — reduced footprint */
+@media (max-width: 1023px) {
+  .world-core-layer {
+    width: clamp(200px, 38vw, 320px);
+    opacity: 0.55;
+  }
+
+  .world-core-layer__tint {
+    inset: -10% -6% -10% -22%;
+    background: radial-gradient(
+      ellipse 60% 50% at 78% 50%,
+      rgb(var(--world-accent-rgb) / 0.07),
+      rgb(var(--world-accent-rgb) / 0.025) 40%,
+      transparent 74%
+    );
+  }
+
+  .world-core-layer--tablet .world-core-layer__canvas,
+  .world-core-layer--tablet .world-core-fallback {
+    transform: scale(0.88);
+    transform-origin: center center;
+  }
+}
+
+/* Mobile — chapter accent only when active */
+@media (max-width: 767px) {
+  .world-core-layer {
+    width: clamp(180px, 52vw, 260px);
+    height: clamp(180px, 52vw, 260px);
+    top: auto;
+    bottom: clamp(4.5rem, 14svh, 7rem);
+    inset-inline-end: clamp(0.5rem, 3vw, 1rem);
+    opacity: 0.38;
+  }
+
+  .world-core-layer__tint {
+    inset: -8% -6% -8% -18%;
+    background: radial-gradient(
+      ellipse 58% 48% at 76% 50%,
+      rgb(var(--world-accent-rgb) / 0.06),
+      rgb(var(--world-accent-rgb) / 0.02) 42%,
+      transparent 76%
+    );
+  }
+
+  .world-core-layer--mobile .world-core-layer__canvas,
+  .world-core-layer--mobile .world-core-fallback {
+    transform: scale(0.92);
+    transform-origin: center center;
+  }
+}
+
+/* Reduced motion — static fallback only */
+.world-core-layer--static {
+  opacity: 0.42;
+}
+
+@media (max-width: 767px) {
+  .world-core-layer--static {
+    opacity: 0.32;
+  }
+}
+
+/* World theme consumers */
+.global-traveler__core,
+.global-traveler__glow {
+  transition:
+    background-color var(--world-transition-duration, 750ms) ease,
+    box-shadow var(--world-transition-duration, 750ms) ease;
+}
+
+.builder-spine::before,
+.builder-spine::after {
+  transition: background var(--world-transition-duration, 750ms) ease;
+}
+
+.journey-shell[data-world-active="1"] .world-eyebrow-accent {
+  color: rgb(var(--world-accent-rgb));
+  transition: color var(--world-transition-duration, 800ms) ease;
+}
+
+.journey-rail--discipline-vertical .journey-rail__node-marker,
+.journey-rail--discipline-vertical .journey-rail__node-number {
+  transition:
+    background-color var(--world-transition-duration, 800ms) ease,
+    border-color var(--world-transition-duration, 800ms) ease,
+    box-shadow var(--world-transition-duration, 800ms) ease,
+    color var(--world-transition-duration, 800ms) ease;
+}
+
+@media (max-width: 767px) {
+  html[data-world-state="security"] .world-core-layer__tint {
+    background: radial-gradient(
+      ellipse 58% 48% at 76% 50%,
+      rgb(var(--world-accent-rgb) / 0.05),
+      rgb(var(--world-accent-rgb) / 0.018) 42%,
+      transparent 76%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-world-state="security"] {
+    --world-transition-duration: 0ms;
+  }
+}

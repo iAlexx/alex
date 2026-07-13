@@ -1,0 +1,341 @@
+{
+  "base": "http://localhost:3080",
+  "canonicalHost": "aalex.me",
+  "timestamp": "2026-07-13T16:59:16.927Z",
+  "sections": {
+    "routes": {
+      "public": [
+        {
+          "route": "/en",
+          "status": 200
+        },
+        {
+          "route": "/ar",
+          "status": 200
+        },
+        {
+          "route": "/en/projects",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/gymura",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/restaurant-platform",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/alexa-ai",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/automation-lab",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/cybersecurity-lab",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/texas-funds",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/alex-linux",
+          "status": 200
+        },
+        {
+          "route": "/en/projects/upcoming",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/gymura",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/restaurant-platform",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/alexa-ai",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/automation-lab",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/cybersecurity-lab",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/texas-funds",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/alex-linux",
+          "status": 200
+        },
+        {
+          "route": "/ar/projects/upcoming",
+          "status": 200
+        }
+      ],
+      "labs": [
+        {
+          "route": "/en/hero-lab",
+          "status": 200,
+          "robots": "noindex, nofollow",
+          "noindex": true,
+          "nofollow": true
+        },
+        {
+          "route": "/ar/hero-lab",
+          "status": 200,
+          "robots": "noindex, nofollow",
+          "noindex": true,
+          "nofollow": true
+        },
+        {
+          "route": "/en/three-hero-lab",
+          "status": 200,
+          "robots": "noindex, nofollow",
+          "noindex": true,
+          "nofollow": true
+        },
+        {
+          "route": "/ar/three-hero-lab",
+          "status": 200,
+          "robots": "noindex, nofollow",
+          "noindex": true,
+          "nofollow": true
+        },
+        {
+          "route": "/en/codex-hero-lab",
+          "status": 200,
+          "robots": "noindex, nofollow",
+          "noindex": true,
+          "nofollow": true
+        },
+        {
+          "route": "/ar/codex-hero-lab",
+          "status": 200,
+          "robots": "noindex, nofollow",
+          "noindex": true,
+          "nofollow": true
+        }
+      ],
+      "assets": [
+        {
+          "asset": "/robots.txt",
+          "status": 200
+        },
+        {
+          "asset": "/sitemap.xml",
+          "status": 200
+        },
+        {
+          "asset": "/manifest.webmanifest",
+          "status": 200
+        },
+        {
+          "asset": "/icon.svg",
+          "status": 200
+        },
+        {
+          "asset": "/en/opengraph-image",
+          "status": 200
+        }
+      ]
+    },
+    "seo": [
+      {
+        "route": "/en",
+        "canonical": "https://aalex.me/en",
+        "lang": "en",
+        "dir": "ltr",
+        "h1Count": 1,
+        "ogImage": "https://aalex.me/en/opengraph-image"
+      },
+      {
+        "route": "/ar",
+        "canonical": "https://aalex.me/ar",
+        "lang": "ar",
+        "dir": "rtl",
+        "h1Count": 1,
+        "ogImage": "https://aalex.me/ar/opengraph-image"
+      }
+    ],
+    "links": {
+      "internalCount": 21,
+      "externalCount": 41,
+      "externalWarnings": [
+        "external https://www.linkedin.com/in/ialexx: HTTP 999 (may be bot-blocked)"
+      ]
+    },
+    "overflow": [
+      {
+        "locale": "en",
+        "w": 430,
+        "h": 932,
+        "scrollWidth": 430,
+        "clientWidth": 430,
+        "overflow": false
+      },
+      {
+        "locale": "en",
+        "w": 390,
+        "h": 844,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflow": false
+      },
+      {
+        "locale": "en",
+        "w": 375,
+        "h": 667,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "overflow": false
+      },
+      {
+        "locale": "en",
+        "w": 360,
+        "h": 800,
+        "scrollWidth": 360,
+        "clientWidth": 360,
+        "overflow": false
+      },
+      {
+        "locale": "en",
+        "w": 320,
+        "h": 568,
+        "scrollWidth": 320,
+        "clientWidth": 320,
+        "overflow": false
+      },
+      {
+        "locale": "en",
+        "w": 768,
+        "h": 1024,
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "overflow": false
+      },
+      {
+        "locale": "en",
+        "w": 1280,
+        "h": 800,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "overflow": false
+      },
+      {
+        "locale": "en",
+        "w": 1440,
+        "h": 900,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 430,
+        "h": 932,
+        "scrollWidth": 430,
+        "clientWidth": 430,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 390,
+        "h": 844,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 375,
+        "h": 667,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 360,
+        "h": 800,
+        "scrollWidth": 360,
+        "clientWidth": 360,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 320,
+        "h": 568,
+        "scrollWidth": 320,
+        "clientWidth": 320,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 768,
+        "h": 1024,
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 1280,
+        "h": 800,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "overflow": false
+      },
+      {
+        "locale": "ar",
+        "w": 1440,
+        "h": 900,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflow": false
+      }
+    ],
+    "worldCore": {
+      "homeCanvases": 1,
+      "projectCanvases": 0,
+      "failures": []
+    },
+    "texasFlow": {
+      "overlap": false,
+      "display": "grid",
+      "nodeCount": 4,
+      "minHeight": 44
+    },
+    "livePreview": {
+      "drift": 0,
+      "failures": []
+    },
+    "disclosures": {
+      "count": 7,
+      "failures": []
+    },
+    "console": {
+      "errors": [],
+      "failures": []
+    }
+  },
+  "failures": [],
+  "warnings": [
+    "external https://www.linkedin.com/in/ialexx: HTTP 999 (may be bot-blocked)"
+  ],
+  "pass": true,
+  "status": "READY TO DEPLOY"
+}
