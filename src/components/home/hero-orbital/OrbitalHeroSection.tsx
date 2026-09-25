@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/content/translations";
 import { composition, v2Spacing } from "@/lib/layout/v2-composition";
@@ -15,11 +12,6 @@ interface OrbitalHeroSectionProps {
 
 /** Production orbital portrait Hero — JourneyShell + approved lab visual. */
 export function OrbitalHeroSection({ locale, dictionary }: OrbitalHeroSectionProps) {
-  const [motionEnabled] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  });
-
   return (
     <JourneyShell
       id="hero"
@@ -34,11 +26,7 @@ export function OrbitalHeroSection({ locale, dictionary }: OrbitalHeroSectionPro
       />
 
       <div className={`${composition.innerWide} ${v2Spacing.hero}`}>
-        <OrbitalHeroComposition
-          locale={locale}
-          dictionary={dictionary}
-          motionEnabled={motionEnabled}
-        />
+        <OrbitalHeroComposition locale={locale} dictionary={dictionary} motionEnabled />
       </div>
     </JourneyShell>
   );

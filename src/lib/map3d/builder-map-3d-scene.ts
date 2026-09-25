@@ -40,7 +40,7 @@ const COLORS = {
   brands: [0.784, 0.816, 0.863], // --accent-brand #c8d0dc
   systems: [0.831, 0.627, 0.329], // --accent-system #d4a054
   intelligence: [0.608, 0.494, 0.851], // --accent-intel #9b7ed9
-  security: [0.898, 0.282, 0.302], // --accent-secure #E5484D
+  security: [0.545, 0.361, 0.965], // --accent-secure #8B5CF6
 } as const;
 
 interface SceneNode {

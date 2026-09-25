@@ -250,7 +250,7 @@ export const en: Dictionary = {
         slug: "cybersecurity-lab",
         title: "Cybersecurity Lab",
         description:
-          "A documented learning and experimentation space covering networking, Linux, web security, vulnerability assessment, and Red Team methodology.",
+          "A documented learning and experimentation space covering networking, Linux, web security, vulnerability assessment, and offensive security methodology with Purple Team direction.",
       },
       {
         slug: "alex-linux",
@@ -282,10 +282,10 @@ export const en: Dictionary = {
     },
   },
   cyber: {
-    title: "Cybersecurity & Red Team Path",
+    title: "Cybersecurity & Purple Team Path",
     intro: [
-      "For Alex, cybersecurity is built on understanding networks, operating systems, web technologies, methodology, documentation, and ethical practice.",
-      "He is following a structured path toward professional penetration testing, Red Team operations, and security consulting.",
+      "For me, cybersecurity is a structured discipline built on methodology, documentation, ethical practice, and understanding both offensive and defensive perspectives.",
+      "The path moves toward professional penetration testing, Purple Team collaboration, detection-aware security work, and security consulting through legal, lab-first practice.",
     ],
     areasTitle: "Areas of focus",
     areas: [
@@ -298,7 +298,7 @@ export const en: Dictionary = {
       "Authorized labs",
       "Technical reporting",
       "Active Directory",
-      "Red Team methodology",
+      "Offensive Security Methodology",
     ],
     legal:
       "All cybersecurity activities presented in this portfolio are performed in legal training environments, personally owned systems, or environments with explicit authorization.",
@@ -529,7 +529,7 @@ export const en: Dictionary = {
         "Authorized penetration-testing labs",
         "Security documentation",
         "Active Directory",
-        "Red Team methodology",
+        "Offensive Security Methodology",
       ],
     },
     "texas-funds": {
@@ -809,10 +809,10 @@ export const en: Dictionary = {
     "cybersecurity-lab": {
       label: "Security Learning & Research Lab",
       title: "Cybersecurity Lab",
-      subtitle: "A structured journey toward professional Red Team work",
+      subtitle: "A structured journey toward Purple Team practice",
       intro: [
-        "The Cybersecurity Lab is a documented learning and experimentation space. For Alex, cybersecurity is built on understanding networks, operating systems, web technologies, methodology, documentation, and ethical practice.",
-        "He is following a structured path toward professional penetration testing, Red Team operations, and security consulting.",
+        "The Cybersecurity Lab is a documented learning and experimentation space. For Alex, cybersecurity is a structured discipline built on methodology, documentation, ethical practice, and understanding both offensive and defensive perspectives.",
+        "The path moves toward professional penetration testing, Purple Team collaboration, detection-aware security work, and security consulting through legal, lab-first practice.",
       ],
       sections: [
         {
@@ -828,7 +828,7 @@ export const en: Dictionary = {
             "Authorized penetration-testing labs",
             "Technical reporting",
             "Active Directory",
-            "Red Team methodology",
+            "Offensive Security Methodology",
           ],
         },
         {
@@ -846,7 +846,7 @@ export const en: Dictionary = {
         {
           title: "Current State",
           paragraphs: [
-            "The lab is in continuous development as Alex advances through the structured path toward penetration testing and Red Team operations.",
+            "The lab is in continuous development as Alex advances through the structured path toward penetration testing and Purple Team practice.",
           ],
         },
       ],
@@ -1044,7 +1044,7 @@ export const en: Dictionary = {
       },
       security: {
         statement:
-          "Structured security discipline toward professional Red Team practice — legal scope, documentation, and responsible reporting.",
+          "Structured security discipline toward Purple Team practice — legal scope, documentation, and responsible reporting.",
       },
       future: {
         intro:
@@ -1175,11 +1175,10 @@ export const en: Dictionary = {
       },
       security: {
         eyebrow: "Build Securely",
-        bridge:
-          "More capability only matters when it is paired with scope, permission, and responsibility.",
+        bridge: "Offensive thinking. Defensive awareness. One security mindset.",
         intro: [
-          "For me, cybersecurity is structured discipline — methodology, documentation, and ethical practice.",
-          "The path leads toward professional penetration testing, Red Team work, and security consulting — through legal, lab-first practice.",
+          "For me, cybersecurity is a structured discipline built on methodology, documentation, ethical practice, and understanding both offensive and defensive perspectives.",
+          "The path moves toward professional penetration testing, Purple Team collaboration, detection-aware security work, and security consulting through legal, lab-first practice.",
         ],
         stagesTitle: "Learning path",
         stages: [
@@ -1200,8 +1199,9 @@ export const en: Dictionary = {
           },
           {
             number: "04",
-            title: "Red Team Direction",
-            description: "Active Directory, Red Team concepts, and professional methodology.",
+            title: "Purple Team Practice",
+            description:
+              "Connecting offensive methodology with defensive understanding, detection, validation, and continuous improvement.",
           },
         ],
         principlesTitle: "Security discipline",
@@ -1247,9 +1247,9 @@ export const en: Dictionary = {
               "Deeper local AI, memory architecture, and automation tied to real workflows.",
           },
           {
-            label: "Red Team & security direction",
+            label: "Purple Team & security direction",
             description:
-              "Structured progression toward penetration testing, Red Team skills, and security consulting.",
+              "Structured progression toward penetration testing, Purple Team collaboration, and security consulting.",
           },
         ],
       },

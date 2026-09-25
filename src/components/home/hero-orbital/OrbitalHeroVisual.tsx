@@ -40,6 +40,15 @@ export function OrbitalHeroVisual({
   const ringsOn = localWebGLRings && motionEnabled && webglEligible;
   useOrbitRingsScene(ringsHostRef, canvasRef, { enabled: ringsOn });
 
+  const [parallaxOn, setParallaxOn] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setParallaxOn(mq.matches && motionEnabled);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, [motionEnabled]);
+
   return (
     <div className="lovable-hero-visual-stack" data-lovable-visual-stack>
       <div ref={ringsHostRef} className="lovable-hero-visual__rings-fixed" aria-hidden>
@@ -58,7 +67,7 @@ export function OrbitalHeroVisual({
       <div className="lovable-hero-visual" data-lovable-hero-visual>
         <div className="lovable-hero-visual__center">
           <div className="lovable-hero-visual__portrait-wrap">
-            <OrbitalHeroPortrait locale={locale} dictionary={dictionary} parallax={motionEnabled} />
+            <OrbitalHeroPortrait locale={locale} dictionary={dictionary} parallax={parallaxOn} />
           </div>
         </div>
 

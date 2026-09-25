@@ -235,9 +235,9 @@ export const TECHNOLOGY_CATALOG = {
       "src/content/translations/en.ts homeV2.worlds.security.stages",
     ],
   },
-  "red-team": {
-    id: "red-team",
-    label: "Red Team Methodology",
+  "offensive-security": {
+    id: "offensive-security",
+    label: "Offensive Security Methodology",
     category: "security",
     iconKey: "target",
     verifiedBy: [

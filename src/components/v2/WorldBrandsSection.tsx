@@ -9,6 +9,7 @@ import { JourneyShell, JourneyComposition } from "@/components/v2/JourneyShell";
 import { HumanAnnotation } from "@/components/v2/BridgeAnnotation";
 import { ProjectStatusBadge } from "@/components/ui/ProjectStatusBadge";
 import { ExternalLink } from "@/components/ui/ExternalLink";
+import { DesktopOnly } from "@/components/ui/DesktopOnly";
 import { DeferredLiveWebsitePreview } from "@/components/projects/DeferredLiveWebsitePreview";
 import { ProjectTechStack } from "@/components/projects/ProjectTechStack";
 import { MobileDisclosure } from "@/components/mobile/MobileDisclosure";
@@ -209,32 +210,34 @@ export function WorldBrandsSection({ locale, dictionary }: WorldBrandsSectionPro
             variant="compact-expanded"
           />
 
-          <div className="mobile-compress-hide">
-            <div className="gymura-preview-header">
-              <p className="text-[10px] font-medium uppercase tracking-wide text-[var(--accent-brand)]">
-                {gymuraCopy.livePreview.title}
-              </p>
-              <ExternalLink
-                href={websiteUrl}
-                opensInNewTabLabel={dictionary.a11y.opensInNewTab}
-                className="inline-flex min-h-11 shrink-0 items-center rounded-full border border-line px-5 text-xs font-medium text-mist transition-colors hover:border-electric hover:text-soft sm:text-sm"
-              >
-                {gymuraCopy.visit}
-              </ExternalLink>
-            </div>
+          <DesktopOnly>
+            <div className="mobile-compress-hide">
+              <div className="gymura-preview-header">
+                <p className="text-[10px] font-medium uppercase tracking-wide text-[var(--accent-brand)]">
+                  {gymuraCopy.livePreview.title}
+                </p>
+                <ExternalLink
+                  href={websiteUrl}
+                  opensInNewTabLabel={dictionary.a11y.opensInNewTab}
+                  className="inline-flex min-h-11 shrink-0 items-center rounded-full border border-line px-5 text-xs font-medium text-mist transition-colors hover:border-electric hover:text-soft sm:text-sm"
+                >
+                  {gymuraCopy.visit}
+                </ExternalLink>
+              </div>
 
-            <div className="gymura-preview-shell">
-              <DeferredLiveWebsitePreview
-                websiteUrl={websiteUrl}
-                title={gymuraCopy.livePreview.title}
-                displayDomain={gymuraCopy.livePreview.displayDomain}
-                openWebsiteLabel={gymuraCopy.livePreview.openWebsiteLabel}
-                labels={dictionary.livePreview}
-                variant="compact-expanded"
-                opensInNewTabLabel={dictionary.a11y.opensInNewTab}
-              />
+              <div className="gymura-preview-shell">
+                <DeferredLiveWebsitePreview
+                  websiteUrl={websiteUrl}
+                  title={gymuraCopy.livePreview.title}
+                  displayDomain={gymuraCopy.livePreview.displayDomain}
+                  openWebsiteLabel={gymuraCopy.livePreview.openWebsiteLabel}
+                  labels={dictionary.livePreview}
+                  variant="compact-expanded"
+                  opensInNewTabLabel={dictionary.a11y.opensInNewTab}
+                />
+              </div>
             </div>
-          </div>
+          </DesktopOnly>
         </div>
       </JourneyComposition>
     </JourneyShell>

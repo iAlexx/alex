@@ -101,8 +101,8 @@ export const skillGroups: SkillGroup[] = [
     id: "cybersecurity",
     title: { en: "Cybersecurity", ar: "الأمن السيبراني" },
     highlights: {
-      en: ["Vulnerability assessment", "Red Team learning path", "Technical reporting"],
-      ar: ["تقييم الثغرات", "مسار الفريق الأحمر", "التقارير التقنية"],
+      en: ["Vulnerability assessment", "Purple Team learning path", "Technical reporting"],
+      ar: ["تقييم الثغرات", "مسار الفريق البنفسجي", "التقارير التقنية"],
     },
     skills: {
       en: [

@@ -1,9 +1,9 @@
 const DOMAIN_PATTERN = /^(?:https?:\/\/)?[\w.-]+\.[a-z]{2,}(?:\/[\w./-]*)?$/i;
 const TECH_PATTERN =
-  /^(?:Next\.js|TypeScript|JavaScript|FastAPI|Ollama|n8n|React|GitHub|SQLite|ChromaDB|Active Directory|Red Team|Alexa AI|ALEX Linux|Texas Funds(?: Bot)?|Gymura)$/i;
+  /^(?:Next\.js|TypeScript|JavaScript|FastAPI|Ollama|n8n|React|GitHub|SQLite|ChromaDB|Active Directory|Purple Team|Offensive Security Methodology|Alexa AI|ALEX Linux|Texas Funds(?: Bot)?|Gymura)$/i;
 
 const SPLIT_PATTERN =
-  /((?:https?:\/\/)?[\w.-]+\.[a-z]{2,}(?:\/[\w./-]*)?|\b(?:Next\.js|TypeScript|JavaScript|FastAPI|Ollama|n8n|React|GitHub|SQLite|ChromaDB|Active Directory|Red Team|Alexa AI|ALEX Linux|Texas Funds(?: Bot)?|Gymura)\b)/i;
+  /((?:https?:\/\/)?[\w.-]+\.[a-z]{2,}(?:\/[\w./-]*)?|\b(?:Next\.js|TypeScript|JavaScript|FastAPI|Ollama|n8n|React|GitHub|SQLite|ChromaDB|Active Directory|Purple Team|Offensive Security Methodology|Alexa AI|ALEX Linux|Texas Funds(?: Bot)?|Gymura)\b)/i;
 
 function isLtrToken(part: string): boolean {
   return DOMAIN_PATTERN.test(part) || TECH_PATTERN.test(part);

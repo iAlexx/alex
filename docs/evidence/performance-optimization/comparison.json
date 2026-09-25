@@ -1,0 +1,94 @@
+{
+  "before": [
+    {
+      "file": "ar-mobile.report.json",
+      "performance": 61,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "4.5 s",
+      "cls": "0",
+      "tbt": "1,100 ms",
+      "speedIndex": "2.4 s"
+    },
+    {
+      "file": "en-mobile.report.json",
+      "performance": 71,
+      "accessibility": 96,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "4.1 s",
+      "cls": "0",
+      "tbt": "600 ms",
+      "speedIndex": "2.4 s"
+    }
+  ],
+  "after": [
+    {
+      "file": "after-ar-mobile.json",
+      "performance": 82,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "seo": 0,
+      "lcp": "4.9 s",
+      "cls": "0",
+      "tbt": "50 ms",
+      "speedIndex": "1.7 s"
+    },
+    {
+      "file": "after-ar-mobile.report.json",
+      "performance": 82,
+      "accessibility": 100,
+      "bestPractices": 96,
+      "seo": 100,
+      "lcp": "4.9 s",
+      "cls": "0",
+      "tbt": "40 ms",
+      "speedIndex": "1.7 s"
+    },
+    {
+      "file": "after-en-mobile.json",
+      "performance": 84,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "seo": 0,
+      "lcp": "4.4 s",
+      "cls": "0",
+      "tbt": "40 ms",
+      "speedIndex": "1.5 s"
+    },
+    {
+      "file": "after-en-mobile.report.json",
+      "performance": 84,
+      "accessibility": 96,
+      "bestPractices": 96,
+      "seo": 100,
+      "lcp": "4.4 s",
+      "cls": "0",
+      "tbt": "50 ms",
+      "speedIndex": "1.5 s"
+    },
+    {
+      "file": "baseline-en-mobile.json",
+      "performance": 70,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "seo": 0,
+      "lcp": "4.0 s",
+      "cls": "0",
+      "tbt": "680 ms",
+      "speedIndex": "2.3 s"
+    },
+    {
+      "file": "test-en.json",
+      "performance": 68,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "seo": 0,
+      "lcp": "4.6 s",
+      "cls": "0",
+      "tbt": "610 ms",
+      "speedIndex": "2.3 s"
+    }
+  ]
+}

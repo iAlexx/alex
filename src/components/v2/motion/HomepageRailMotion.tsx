@@ -619,6 +619,14 @@ export function HomepageRailMotion() {
         const isMobile = window.matchMedia(MOTION_MEDIA.mobile).matches;
         const isRtl = document.documentElement.dir === "rtl";
 
+        if (isMobile) {
+          completeAllRailDecorations();
+          if (process.env.NODE_ENV === "development") {
+            console.info("[rail-motion] mobile branch — static complete rails");
+          }
+          return () => undefined;
+        }
+
         prepareAllRailDecorations(isRtl, isMobile);
         setupHomepageRailMotion(isRtl, isMobile);
 

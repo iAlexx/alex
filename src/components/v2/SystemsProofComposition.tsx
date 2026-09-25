@@ -5,6 +5,7 @@ import type { Dictionary } from "@/content/translations";
 import { restaurantPlatform } from "@/content/projects/restaurant-platform";
 import { composition } from "@/lib/layout/v2-composition";
 import { ProjectStatusBadge } from "@/components/ui/ProjectStatusBadge";
+import { DesktopOnly } from "@/components/ui/DesktopOnly";
 import { DeferredLiveWebsitePreview } from "@/components/projects/DeferredLiveWebsitePreview";
 
 interface SystemsProofCompositionProps {
@@ -28,15 +29,17 @@ export function SystemsProofComposition({
   return (
     <div className={`${composition.systemsProofGrid} systems-proof-composition`}>
       <div className="systems-proof-composition__preview min-w-0">
-        <DeferredLiveWebsitePreview
-          websiteUrl={restaurantPlatform.website ?? "https://alnkha.site"}
-          title={restaurantCopy.livePreview.title}
-          displayDomain={restaurantCopy.livePreview.displayDomain}
-          openWebsiteLabel={restaurantCopy.livePreview.openWebsiteLabel}
-          labels={dictionary.livePreview}
-          variant="compact"
-          opensInNewTabLabel={dictionary.a11y.opensInNewTab}
-        />
+        <DesktopOnly>
+          <DeferredLiveWebsitePreview
+            websiteUrl={restaurantPlatform.website ?? "https://alnkha.site"}
+            title={restaurantCopy.livePreview.title}
+            displayDomain={restaurantCopy.livePreview.displayDomain}
+            openWebsiteLabel={restaurantCopy.livePreview.openWebsiteLabel}
+            labels={dictionary.livePreview}
+            variant="compact"
+            opensInNewTabLabel={dictionary.a11y.opensInNewTab}
+          />
+        </DesktopOnly>
       </div>
 
       <div className="systems-proof-composition__details flex flex-col gap-5 lg:pt-1">

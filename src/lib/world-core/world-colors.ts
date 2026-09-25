@@ -8,18 +8,25 @@ type WorldRgb = {
   surface: string;
 };
 
-/** Cybersecurity world — permanent restrained crimson */
-export const SECURITY_CRIMSON_RGB: WorldRgb = {
-  accent: "229, 72, 77",
-  soft: "200, 58, 69",
-  line: "200, 58, 69",
-  glow: "229, 72, 77",
-  surface: "143, 32, 42",
+/** Cybersecurity world — permanent Purple Team identity */
+export const SECURITY_PURPLE_RGB: WorldRgb = {
+  accent: "139, 92, 246",
+  soft: "168, 85, 247",
+  line: "139, 92, 246",
+  glow: "192, 132, 252",
+  surface: "91, 33, 182",
 };
 
-export const SECURITY_CRIMSON_HEX = "#E5484D";
-export const SECURITY_CRIMSON_GLOW_HEX = "#C83A45";
-export const SECURITY_CRIMSON_DEEP_HEX = "#8F202A";
+export const SECURITY_PURPLE_HEX = "#8B5CF6";
+export const SECURITY_PURPLE_SECONDARY_HEX = "#A855F7";
+export const SECURITY_PURPLE_GLOW_HEX = "#C084FC";
+export const SECURITY_PURPLE_DEEP_HEX = "#5B21B6";
+
+/** @deprecated Use SECURITY_PURPLE_* — kept for historical report imports only */
+export const SECURITY_CRIMSON_RGB = SECURITY_PURPLE_RGB;
+export const SECURITY_CRIMSON_HEX = SECURITY_PURPLE_HEX;
+export const SECURITY_CRIMSON_GLOW_HEX = SECURITY_PURPLE_GLOW_HEX;
+export const SECURITY_CRIMSON_DEEP_HEX = SECURITY_PURPLE_DEEP_HEX;
 
 /** World accent hex values — aligned with Lovable + production tokens */
 export const WORLD_HEX: Record<WorldState, string> = {
@@ -28,7 +35,7 @@ export const WORLD_HEX: Record<WorldState, string> = {
   brands: "#c8d0dc",
   systems: "#d4a054",
   intelligence: "#9b7ed9",
-  security: SECURITY_CRIMSON_HEX,
+  security: SECURITY_PURPLE_HEX,
   future: "#3a6fcc",
   manifesto: "#4f8dff",
   contact: "#3d5a99",
@@ -71,7 +78,7 @@ export const WORLD_RGB: Record<WorldState, WorldRgb> = {
     glow: "131, 91, 255",
     surface: "100, 80, 180",
   },
-  security: SECURITY_CRIMSON_RGB,
+  security: SECURITY_PURPLE_RGB,
   future: {
     accent: "58, 111, 204",
     soft: "47, 90, 180",
@@ -102,7 +109,7 @@ export const WORLD_RING_GLOW_HEX: Record<WorldState, string> = {
   brands: "#b8c0cc",
   systems: "#e7a13b",
   intelligence: "#835bff",
-  security: SECURITY_CRIMSON_GLOW_HEX,
+  security: SECURITY_PURPLE_GLOW_HEX,
   future: "#2f5ab4",
   manifesto: "#6fa0ff",
   contact: "#2f508c",
@@ -115,7 +122,7 @@ export const WORLD_TINT: Record<WorldState, string> = {
   brands: "rgba(200, 208, 220, 0.10)",
   systems: "rgba(212, 160, 84, 0.14)",
   intelligence: "rgba(155, 126, 217, 0.16)",
-  security: "rgba(229, 72, 77, 0.08)",
+  security: "rgba(139, 92, 246, 0.08)",
   future: "rgba(58, 111, 204, 0.10)",
   manifesto: "rgba(79, 141, 255, 0.12)",
   contact: "rgba(61, 90, 153, 0.08)",

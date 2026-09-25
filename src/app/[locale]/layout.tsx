@@ -59,7 +59,7 @@ export default async function LocaleLayout({
       lang={locale}
       dir={directions[locale]}
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${arabicSans.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}${locale === "ar" ? ` ${arabicSans.variable}` : ""} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-obsidian text-soft">{children}</body>
     </html>

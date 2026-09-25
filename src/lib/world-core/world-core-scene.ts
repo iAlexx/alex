@@ -30,7 +30,7 @@ export async function createWorldCoreScene(
     renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
-      antialias: true,
+      antialias: !isMobile,
       powerPreference: "high-performance",
     });
   } catch {

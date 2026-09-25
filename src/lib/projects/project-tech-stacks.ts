@@ -68,7 +68,7 @@ export const PROJECT_TECH_STACKS: Record<ProjectSlug, ProjectTechStack> = {
       "api-security",
       "vulnerability-assessment",
       "active-directory",
-      "red-team",
+      "offensive-security",
     ]),
     homepageIds: [
       "linux",
@@ -77,7 +77,7 @@ export const PROJECT_TECH_STACKS: Record<ProjectSlug, ProjectTechStack> = {
       "web-technologies",
       "web-security",
       "active-directory",
-      "red-team",
+      "offensive-security",
       "vulnerability-assessment",
     ],
   },
